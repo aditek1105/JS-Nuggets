@@ -2,7 +2,7 @@
 /**
  * About MAP, it returns a new array, does not change the size of the original array. 
  */
-const obj1 = [{
+const people = [{
     name: 'Aditya',
     age: 23,
     location: 'New Delhi'
@@ -15,3 +15,6 @@ const obj1 = [{
     age: 21,
     location: 'Boston'
 }];
+
+const age = people.map(age => age.age);
+console.log(age)
