@@ -19,3 +19,11 @@ const people = [{
 const age = people.map(age => age.age);
 console.log(age);
 console.log(people.map(name => name.name))
+
+const details = people.map((item) => {
+    return {
+    firstName: item.name,
+    place: item.location
+    }
+})
+console.log(details)
