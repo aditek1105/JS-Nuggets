@@ -1,4 +1,7 @@
 // use of MAP in javascript
+/**
+ * About MAP, it returns a new array, does not change the size of the original array. 
+ */
 const obj1 = {
     name: 'Aditya',
     age: 23,
