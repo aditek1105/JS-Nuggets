@@ -20,10 +20,20 @@ const age = people.map(age => age.age);
 console.log(age);
 console.log(people.map(name => name.name))
 
-const details = people.map((item) => {
+const det = people.map((item) => {
     return {
     firstName: item.name,
     place: item.location
     }
 })
-console.log(details)
+console.log(det)
+
+// using template function to display the result on the webpage
+const locationdetails = people.map(items => `<h2>${items.location}</h2>`)
+const names = people.map(name => name.name)
+
+const res = document.querySelector("#temp")
+const result = document.querySelector("#result");
+
+result.innerHTML = locationdetails.join('');
+res.innerHTML = names.join(' ');
