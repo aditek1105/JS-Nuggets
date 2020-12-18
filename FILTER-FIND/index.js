@@ -15,11 +15,11 @@ const age_no_match = people.filter(age => age.age > 100)
 console.log(age_no_match)
 
 //find
-const find_gender = people.find(gen => gen.gender == 'Female')
+const find_gender = people.find(gen => gen.gender === 'Female')
 console.log(find_gender)
 
 //no match
-const find_no_match = people.find(gen => gen.age == 30)
+const find_no_match = people.find(gen => gen.age === 30)
 console.log(find_no_match)
 
 // 
