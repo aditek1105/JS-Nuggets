@@ -3,7 +3,7 @@
 const people = [
     {name: 'Aditya', age: 20, gender: 'Male'},
     {name: 'Prinesh', age: 23, gender: 'Male'},
-    {name: 'Saakshi', age: 25, gender: 'Female'},
+    {name: 'Sakshi', age: 25, gender: 'Female'},
     {name: 'Ananya', age: 29, gender: 'Female'}
 ];
 // filter
