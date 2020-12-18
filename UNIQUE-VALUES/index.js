@@ -32,3 +32,7 @@ console.log(categories)
 
 const display = document.querySelector("#result");
 display.innerHTML = categories.join('')
+
+display.innerHTML = categories.map(temps => {
+    return `<button>${temps}</button>`
+}).join('  ')
