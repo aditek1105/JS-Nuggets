@@ -26,3 +26,20 @@ console.log(dok);
 let computer = 'PC'
 dok[computer] = 'Apple'
 console.log(dok)
+
+// creating a state object and updating its value dynamically from a user defined function
+
+const state = {
+    loading: true,
+    name: '',
+    age:''
+}
+
+function stateDef(key,value) {
+    state[key] = value
+}
+stateDef('name','Aditya')
+stateDef('age',23)
+console.log(state)
+stateDef('loading',false)
+console.log(state)
