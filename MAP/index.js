@@ -18,4 +18,4 @@ const people = [{
 
 const age = people.map(age => age.age);
 console.log(age);
-console.log(age.name);
+console.log(people.map(name => name.name))
