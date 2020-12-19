@@ -66,6 +66,7 @@ const url = 'https://api.github.com/users/john-smilga/repos?per_page=100'
 //     },{})
 //     console.log(newData)
 // }
+//Op for above, CSS: 46, HTML: 14, JavaScript: 37, null: 3
 
 // total number of repos in the dataset
 // const fetchRepos = async() => {
@@ -78,17 +79,48 @@ const url = 'https://api.github.com/users/john-smilga/repos?per_page=100'
 // console.log(newData)
 // }
 
-//total stargazers_count
+//total stargazers_count and watchers_count
+// const fetchRepos = async() => {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     const newData = data.reduce((total,data)=>{
+//     const{stargazers_count,watchers_count} = data;
+//     total.s_count += stargazers_count;
+//     total.w_count += watchers_count;
+//     return total
+//     },{s_count:0,
+//     w_count:0})
+//     console.log(newData)
+// }
+
+// total number of forks and watchers for all the repos
+// const fetchRepos = async() => {
+//     const response = await fetch(url)
+//     const data = await response.json()
+//     const newData = data.reduce((total,data)=>{
+//         const{forks,watchers} = data
+//         total.no_of_forks += forks
+//         total.no_of_watchers += watchers
+//         return total
+//     },{no_of_forks:0,
+//     no_of_watchers:0})
+//     console.log(newData)
+// }
+
+
+// total number of forks and watchers for JavaScript language
 const fetchRepos = async() => {
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await fetch(url)
+    const data = await response.json()
     const newData = data.reduce((total,data)=>{
-    
-    return total
-    },0)
+        const {language,watchers,forks} = data;
+        if(language === 'JavaScript') {
+            total.no_forks += forks
+            total.no_watchers += watchers
+        }
+        return total
+    },{no_watchers:0,
+    no_forks:0})
     console.log(newData)
 }
-
-//Op for above, CSS: 46, HTML: 14, JavaScript: 37, null: 3
-
 fetchRepos()
