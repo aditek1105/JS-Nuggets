@@ -19,6 +19,76 @@ const cart = [{
     price: 300,
     amount: 1
 }]
+// to return the number of items and the total cart cost
+let total = cart.reduce((total,cartItem) => {
+    const {amount:noOfItems,price:totalCost} = cartItem;
+    total.totalItems += noOfItems;
+    total.cartTotal += totalCost * noOfItems;
+    return total
+},{
+    totalItems: 0,
+    cartTotal: 0
+})
 
-let total = cart.reduce((total,cartItem) => {return total},{})
 console.log(total)
+
+// the same as above, just destructuring it
+let {totalItems,cartTotal} = cart.reduce((total,cartItem) => {
+    const {amount:noOfItems,price:totalCost} = cartItem;
+    total.totalItems += noOfItems;
+    total.cartTotal += totalCost * noOfItems;
+    return total
+},{
+    totalItems: 0,
+    cartTotal: 0
+})
+console.log(totalItems,cartTotal)
+
+
+// working with a github repo examples
+
+const url = 'https://api.github.com/users/john-smilga/repos?per_page=100'
+
+// fetching the data from the repo dataset 
+// to count the total number of languages
+
+// const fetchRepos = async() => {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     const newData = data.reduce((total,repo)=>{
+//         const {language} = repo
+//         if(total[language]) {
+//             total[language] = total[language] + 1
+//         } else {
+//             total[language] = 1
+//         }
+//         return total
+//     },{})
+//     console.log(newData)
+// }
+
+// total number of repos in the dataset
+// const fetchRepos = async() => {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     const newData = data.reduce((total,data)=>{
+//         total += 1
+//         return total
+//     },0)
+// console.log(newData)
+// }
+
+//total stargazers_count
+const fetchRepos = async() => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const newData = data.reduce((total,data)=>{
+    
+    return total
+    },0)
+    console.log(newData)
+}
+
+//Op for above, CSS: 46, HTML: 14, JavaScript: 37, null: 3
+
+fetchRepos()
