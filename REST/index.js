@@ -29,4 +29,6 @@ const average = scores.reduce((total,item)=>{
 console.log(average)
 }
 
-getAverage(person.name,10,10,10)
+//getAverage(person.name,10,10,10)
+const testScores = [10,20,30,40]
+getAverage(person.name,...testScores)
