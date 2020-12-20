@@ -10,3 +10,10 @@ const split = [...text]
 console.log(split)
 // both are same
 console.log(Array.from(text))
+
+const text1 = document.querySelectorAll('.text');
+console.log(text1)
+
+const newText = Array.from(text1).find((item) => item.textContent === 'person');
+console.log(newText)
+
